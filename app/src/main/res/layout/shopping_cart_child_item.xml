@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+
+    <RelativeLayout
+        android:id="@+id/ll_shopping_cart_child"
+        android:layout_width="30dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="10dp"
+        android:paddingTop="28dp">
+
+        <CheckBox
+            android:id="@+id/cb_shopping_cart_child"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true" />
+
+    </RelativeLayout>
+
+    <!-- 这里开始 -->
+    <LinearLayout
+        android:id="@+id/ll_shopping_cart_child_item_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/ll_shopping_cart_child"
+        android:orientation="vertical"
+        android:paddingTop="2dp">
+
+        <RelativeLayout
+            android:id="@+id/shopping_cart_child"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1">
+
+            <!-- 图 -->
+            <RelativeLayout
+                android:id="@+id/rl_shopping_cart"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="2dp">
+
+                <ImageView
+                    android:id="@+id/iv_shopping_cart"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:scaleType="centerCrop" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/rl_shopping_cart">
+
+                <RelativeLayout
+                    android:id="@+id/rl_shopping_cart_not_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_centerVertical="true"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/tv_child_item_goods_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="10dp"
+                        android:ellipsize="end"
+                        android:lines="1" />
+
+
+                    <TextView
+                        android:id="@+id/tv_shopping_cart_unit_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="10dp"
+                        tools:text="测试" />
+
+                    <LinearLayout
+                        android:id="@+id/tv_child_item_goods_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_toRightOf="@+id/tv_shopping_cart_unit_price"
+                        android:orientation="horizontal">
+
+                        <ImageButton
+                            android:id="@+id/tv_shopping_cart_sub"
+                            android:layout_width="25dp"
+                            android:layout_height="match_parent"
+                            android:background="#cccccc"
+                            android:src="@drawable/icon_shoppingcart_sub" />
+
+                        <EditText
+                            android:id="@+id/et_shopping_cart_child_count"
+                            android:layout_width="50dp"
+                            android:layout_height="match_parent"
+                            android:clickable="false"
+                            android:background="@null"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:gravity="center"
+                            android:text="1"
+                            android:textSize="16sp" />
+
+
+                        <ImageButton
+                            android:id="@+id/tv_shopping_cart_add"
+                            android:layout_width="25dp"
+                            android:layout_height="match_parent"
+                            android:background="#cccccc"
+                            android:src="@drawable/icon_shoppingcart_add" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_shopping_cart_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:id="@+id/ll_edit_add_sub"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/iv_shopping_cart_sub_edit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"
+                            android:text="—"
+                            android:textColor="#a9a9a9"
+                            android:textSize="28sp" />
+
+                        <EditText
+                            android:id="@+id/et_shopping_cart_child_count_edit"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:gravity="center"
+                            android:text="1" />
+
+                        <TextView
+                            android:id="@+id/iv_shopping_cart_add_edit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="30dp"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"
+                            android:text="+"
+                            android:textColor="#a9a9a9"
+                            android:textSize="34sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_shopping_cart_delete_edit"
+                        android:layout_width="38dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="删除" />
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/ll_shopping_cart_child_item_content"
+        android:layout_marginTop="12dp" />
+
+    <LinearLayout
+        android:id="@+id/ll_shopping_cart_child_item_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text="合计:" />
+
+            <TextView
+                android:id="@+id/tv_shopping_cart_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="1"
+                tools:text="15" />
+
+            <TextView
+                android:id="@+id/tv_confirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@android:color/holo_red_dark"
+                android:paddingBottom="20dp"
+                android:paddingLeft="50dp"
+                android:paddingRight="50dp"
+                android:paddingTop="20dp"
+                android:text="去结算"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+    </LinearLayout>
+</RelativeLayout>
